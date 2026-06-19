@@ -1,0 +1,202 @@
+--------------------------
+
+学籍番号 : 24B39020
+氏名 : KEVIN
+
+--------------------------
+
+回答1.2 : Buttonクラスの継承関係は次のとおり
+
+java.lang.Object
+javafx.scene.Node
+javafx.scene.Parent
+javafx.scene.layout.Region
+javafx.scene.control.Control
+javafx.scene.control.Labeled
+javafx.scene.control.ButtonBase
+javafx.scene.control.Button
+
+
+
+
+
+回答1.3 : setOnAction メソッドが定義されているクラスは次のとおり
+
+public final void setOnAction(EventHandler<ActionEvent> value)
+Sets the value of the onAction property.
+Property description:
+The button's action, which is invoked whenever the button is fired. This may be due to the user clicking on the button with the mouse, or by a touch event, or by a key press, or if the developer programmatically invokes the fire() method.
+Parameters:
+value - the value for the onAction property
+
+
+
+
+
+回答1.4 : handle メソッドが呼ばれる時の引数のクラス含まれている情報は次のとおり
+java.lang.Object
+java.util.EventObject
+javafx.event.Event
+javafx.event.ActionEvent
+All Implemented Interfaces:
+Serializable, Cloneable
+Direct Known Subclasses:
+MediaMarkerEvent
+public class ActionEvent
+extends Event
+An Event representing some type of action. This event type is widely used to represent a variety of things, such as when a Button has been fired, when a KeyFrame has finished, and other such usages.
+
+
+
+
+
+
+回答1.5 : パッケージcalc内のクラス、インタフェースの継承、実装関係は次のとおり
+
+package para.calc
+電卓JavaFXアプリケーション関連パッケージ。 逆ポーランド記法で書かれた四則演算の数式を計算する電卓用です。
+All Classes and Interfaces
+Class
+Description
+
+Calculator
+JavaFX 電卓アプリケーションのメインクラス
+java.lang.Object
+javafx.application.Application
+para.calc.Calculator
+public class Calculator
+extends Application
+JavaFX 電卓アプリケーションのメインクラス
+
+Executor
+電卓内の数値計算実装部のインタフェース
+Executor1
+public interface Executor
+電卓内の数値計算実装部のインタフェース
+Method Summary Link icon
+All MethodsInstance MethodsAbstract Methods
+Modifier and Type
+Method
+Description
+String
+operation(String data)
+文字列を受け取り、処理を行う
+
+Executor1
+逆ポーランド記法によリ書かれた四則演算の文字列に対して数値計算をするクラス
+java.lang.Object
+para.calc.ExecutorBase
+para.calc.Executor1
+All Implemented Interfaces:
+Executor
+public class Executor1
+extends ExecutorBase
+implements Executor
+逆ポーランド記法によリ書かれた四則演算の文字列に対して数値計算をするクラス
+Field Summary Link icon
+Fields inherited from class ExecutorBase Link icon
+result, s
+
+ExecutorBase
+逆ポーランド記法の数式文字列に対して数値計算をするための基本処理が定義されているクラス
+java.lang.Object
+para.calc.ExecutorBase
+Direct Known Subclasses:
+Executor1
+public abstract class ExecutorBase
+extends Object
+逆ポーランド記法の数式文字列に対して数値計算をするための基本処理が定義されているクラス
+Field Summary Link icon
+Fields
+Modifier and Type
+Field
+Description
+protected String
+result
+計算結果保存用
+protected Scanner
+s
+文字列を分解してトークン分解する
+Constructor Summary 
+
+
+
+
+
+
+回答2.1 : 作成されたclassファイルのディレクトリ位置はそれぞれ次のとおり
+D:\TOKODAI\pararell_programming\parawork\Para1\bin\para\paint\paint.class
+D:\TOKODAI\pararell_programming\parawork\Para1\bin\para\calc\Calculator.class
+
+
+
+
+
+
+回答2.2 : 説明は次のとおり
+
+
+
+
+
+
+
+回答2.3 : 説明は次のとおり
+
+
+
+
+
+
+
+回答3.1 : ソースコードの変更を次のように行った
+
+
+
+
+
+
+回答3.2 : ソースコードの変更を次のように行った
+
+
+
+
+
+
+回答3.3 : ソースコードの変更を次のように行った
+
+
+
+
+
+
+回答3.4 : 機能拡張を次のように行った
+
+追加機能その1
+　具体的な実装の説明
+
+
+
+
+追加機能その2
+　具体的な実装の説明
+
+
+
+
+
+回答4.1 :
+　実装に工夫した点があれば説明
+
+
+
+回答4.2 :
+  (イベントハンドラの登録の実装をどう行ったかを説明
+  工夫した点があれば、その説明)
+
+
+回答4.3 :
+
+
+
+
