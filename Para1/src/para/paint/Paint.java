@@ -1,3 +1,7 @@
+/*
+  課題3 KEVIN 24B39020
+*/
+
 package para.paint;
 
 import javafx.application.Application;
@@ -61,22 +65,31 @@ public class Paint extends Application {
     });
 
     rotateL = new Button("rotate left");
+    rotateL.setOnAction(e -> {
+      canvas.setRotate(canvas.getRotate() - 90);
+    });
+
     rotateR = new Button("rotate right");
+    rotateR.setOnAction(e -> {
+      canvas.setRotate(canvas.getRotate() + 90);
+    });
 
     BorderPane bp = new BorderPane();
     VBox vb = new VBox();
+    HBox hb = new HBox();
+    hb.setAlignment(Pos.CENTER);
     Slider sliderr = new Slider(0, 255, 0);
     Slider sliderg = new Slider(0, 255, 0);
     Slider sliderb = new Slider(0, 255, 1);
     Slider slider_transpaSlider = new Slider(0, 1, 1);
-    Slider slider_pen_width = new Slider(0, 255, 0);
+    Slider slider_pen_width = new Slider(1, 30, 4);
 
     ChangeListener<Number> listener = (obs, oldVal, newVal) -> {
       gc.setStroke(Color.rgb(
           (int) sliderr.getValue(),
           (int) sliderg.getValue(),
           (int) sliderb.getValue(),
-          (int) slider_transpaSlider.getValue()
+          slider_transpaSlider.getValue()
 
       ));
       gc.setLineWidth((int) slider_pen_width.getValue());
@@ -93,9 +106,8 @@ public class Paint extends Application {
     vb.getChildren().add(sliderb);
     vb.getChildren().add(slider_transpaSlider);
     vb.getChildren().add(slider_pen_width);
-    vb.getChildren().add(clear);
-    vb.getChildren().add(rotateL);
-    vb.getChildren().add(rotateR);
+    hb.getChildren().addAll(clear, rotateL, rotateR);
+    vb.getChildren().add(hb);
     bp.setTop(vb);
     bp.setCenter(canvas);
     Scene scene = new Scene(bp);
