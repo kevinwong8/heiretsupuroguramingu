@@ -64,15 +64,6 @@ public class Calculator extends Application {
     grid.add(buttondel, 4, 0, 1, 2);
     grid.add(buttoncal, 4, 2, 1, 2);
 
-    scene.setOnKeyPressed(event -> {
-      if (event.getCode() == KeyCode.BACK_SPACE) {
-        if (buff.length() > 0) {
-          buff.setLength(buff.length() - 1);
-          input.setText(buff.toString());
-        }
-      }
-
-    });
     scene.setOnKeyTyped(event -> {
       String typedString = event.getCharacter();
       if (typedString.equals("<")) {
@@ -80,6 +71,12 @@ public class Calculator extends Application {
           buff.setLength(buff.length() - 1);
 
         }
+      } else if (typedString.equals("=")) {
+        Executor1 ans = new Executor1();
+        String operationResult = ans.operation(buff.toString());
+        output.setText(operationResult);
+        input.setText("");
+        buff.setLength(0);
       } else {
         buff.append(typedString);
       }
